@@ -1,0 +1,20 @@
+@import './normalize.css';
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'jostvf';
+  src: url('../fonts/Jost-VF.ttf') format('truetype');
+}
+
+body {
+  font-family: 'jostvf';
+  font-weight: 100;
+}
+
+article p {
+  font-size: 10rem;
+  font-variation-settings: 'wght' 100, 'ital' 0;
+}
