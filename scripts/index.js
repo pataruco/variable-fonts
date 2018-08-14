@@ -5,7 +5,7 @@ const blow = stream => {
   const microphone = audioContext.createMediaStreamSource(stream);
   const processor = audioContext.createScriptProcessor(256, 1, 1);
 
-  analyser.smoothingTimeConstant = 0.3;
+  analyser.smoothingTimeConstant = 0.75;
   analyser.fftSize = 1024;
 
   microphone.connect(analyser);

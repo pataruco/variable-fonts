@@ -1,12 +1,8 @@
 @import './normalize.css';
+@import './fonts.css';
 
 * {
   box-sizing: border-box;
-}
-
-@font-face {
-  font-family: 'jostvf';
-  src: url('../fonts/jost-VF.ttf') format('truetype');
 }
 
 body {
