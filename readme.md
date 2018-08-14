@@ -21,4 +21,4 @@ Is an experiment using [CSS 4 `font-variation-settings`](https://www.w3.org/TR/c
   open index.html
   ```
 
-[## Live version here :dash:](https://pataruco.github.io/variable-fonts/)
+## [Live version here :dash:](https://pataruco.github.io/variable-fonts/)
