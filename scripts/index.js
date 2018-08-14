@@ -1,18 +1,18 @@
-const handleSuccess = stream => {
+const blow = stream => {
   const text = document.getElementById('js-text');
   const audioContext = new AudioContext();
   const analyser = audioContext.createAnalyser();
   const microphone = audioContext.createMediaStreamSource(stream);
-  const javascriptNode = audioContext.createScriptProcessor(2048, 1, 1);
+  const processor = audioContext.createScriptProcessor(256, 1, 1);
 
   analyser.smoothingTimeConstant = 0.3;
   analyser.fftSize = 1024;
 
   microphone.connect(analyser);
-  analyser.connect(javascriptNode);
-  javascriptNode.connect(audioContext.destination);
+  analyser.connect(processor);
+  processor.connect(audioContext.destination);
 
-  javascriptNode.onaudioprocess = () => {
+  processor.onaudioprocess = () => {
     const array = new Uint8Array(analyser.frequencyBinCount);
     analyser.getByteFrequencyData(array);
     let values = 0;
@@ -20,16 +20,14 @@ const handleSuccess = stream => {
 
     array.forEach(item => (values += item));
 
-    const average = values / length;
+    const inclination = (values / length) * 0.01;
 
-    text.style.fontVariationSettings = `'ital' ${average}`;
+    text.style.fontVariationSettings = `'wght' 100, 'ital' ${inclination}`;
   };
 };
 
 const enableAudio = () => {
-  navigator.mediaDevices
-    .getUserMedia({ audio: true, video: false })
-    .then(handleSuccess);
+  navigator.mediaDevices.getUserMedia({ audio: true, video: false }).then(blow);
 };
 
 document.addEventListener('DOMContentLoaded', enableAudio);

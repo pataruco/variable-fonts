@@ -6,12 +6,19 @@
 
 @font-face {
   font-family: 'jostvf';
-  src: url('../fonts/Jost-VF.ttf') format('truetype');
+  src: url('../fonts/jost-VF.ttf') format('truetype');
 }
 
 body {
   font-family: 'jostvf';
   font-weight: 100;
+}
+
+article {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
 article p {
